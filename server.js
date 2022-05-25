@@ -22,7 +22,7 @@ const db = knex({
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => res.json('GET success'));
+app.get('/', (req, res) => res.send('GET success'));
 
 // repetitions can be seen from these 2 lines of code
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
