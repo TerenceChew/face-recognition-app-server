@@ -40,7 +40,7 @@ if (port === null || port === '') {
 
 app.listen(port, (err) => {
   if (!err) {
-    console.log('app is running on port 3000');
+    console.log(`app is running on port ${port}`);
   } else {
     console.log(err)
   }
