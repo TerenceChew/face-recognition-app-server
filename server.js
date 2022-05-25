@@ -33,7 +33,12 @@ app.put('/image', image.handleImage(db));
 app.post('/image/clarifaiApiCall', image.handleClarifaiApiCall);
 app.get('/profile/:id', profile.handleProfile(db));
 
-app.listen('3000', (err) => {
+let port = process.env.PORT;
+if (port === null || port === '') {
+  port = 3000;
+}
+
+app.listen(port, (err) => {
   if (!err) {
     console.log('app is running on port 3000');
   } else {
